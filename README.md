@@ -36,6 +36,11 @@ $ yarn jest currency-conversion.service.spec.ts
 $ yarn jest app.module.spec.ts
 ```
 
+## TO DO
+
+1. Add integration tests with running database
+2. Add monitoring (`prom-client`, `Prometheus`, `Grafana`)
+
 ## Stay in touch
 
 - linkedin - [Andrei Mashko](http://www.linkedin.com/in/andrei-mashko)
