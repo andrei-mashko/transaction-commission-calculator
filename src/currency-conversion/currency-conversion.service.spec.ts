@@ -12,6 +12,8 @@ describe('CurrencyConversionService', () => {
   let conversionRatesProvider: ConversionRatesProvider;
 
   beforeEach(async () => {
+    jest.resetAllMocks();
+
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         CurrencyConversionService,
