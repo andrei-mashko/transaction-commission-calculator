@@ -7,6 +7,7 @@ import { ClientWithDiscountRule } from './rules/client-with-discount-rule';
 import { CommissionCalculationRule } from './interfaces/commission-calculation-rule.interface';
 import { DefaultPricingRule } from './rules/default-pricing-rule';
 import { Transaction } from './interfaces/transaction.interface';
+import { HighTurnoverDiscountRule } from './rules/high-turnover-discount-rule';
 
 @Injectable()
 export class CommissionCalculatorService {
@@ -16,10 +17,12 @@ export class CommissionCalculatorService {
   constructor(
     private readonly clientWithDiscountRule: ClientWithDiscountRule,
     private readonly defaultPricingRule: DefaultPricingRule,
+    private readonly highTurnoverDiscountRule: HighTurnoverDiscountRule,
   ) {
     this.commissionCalculationRules.push(
       this.clientWithDiscountRule,
       this.defaultPricingRule,
+      this.highTurnoverDiscountRule,
     );
   }
 
