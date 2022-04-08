@@ -2,10 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './app.module';
-import {
-  ConversionRatesProvider,
-  CONVERSION_RATES_PROVIDER,
-} from './currency-conversion/interfaces/conversion-rates-provider.interface';
+import { CONVERSION_RATES_PROVIDER } from './currency-conversion/interfaces/conversion-rates-provider.interface';
 import { CommissionCalculationHistoryRepository } from './commission-calculation/commission-calculation-history/commission-calculation-history.repository';
 import { setupApp } from './main-setup-app';
 import { MoneyAmount } from './money-amount/money-amount';
@@ -13,7 +10,6 @@ import { MoneyAmount } from './money-amount/money-amount';
 describe('App', () => {
   describe('/commission-calculation (POST)', () => {
     let app: INestApplication;
-    let conversionRatesProvider: ConversionRatesProvider;
     let commissionCalculationHistoryRepository: CommissionCalculationHistoryRepository;
 
     beforeEach(async () => {
@@ -33,9 +29,6 @@ describe('App', () => {
         })
         .compile();
 
-      conversionRatesProvider = module.get<ConversionRatesProvider>(
-        CONVERSION_RATES_PROVIDER,
-      );
       commissionCalculationHistoryRepository =
         module.get<CommissionCalculationHistoryRepository>(
           CommissionCalculationHistoryRepository,
