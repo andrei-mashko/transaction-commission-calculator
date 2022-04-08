@@ -48,8 +48,11 @@ export class MoneyAmount {
     operation: 'add' | 'multiply' | 'divide',
     value: any,
   ): MoneyAmount {
+    const valueToPass = MoneyAmount.isMoneyAmount(value)
+      ? (value as MoneyAmount).value()
+      : value;
     return MoneyAmount.ofNumeral(
-      MoneyAmount.copyNumeral(this.numeral)[operation](value),
+      MoneyAmount.copyNumeral(this.numeral)[operation](valueToPass),
     );
   }
 }
