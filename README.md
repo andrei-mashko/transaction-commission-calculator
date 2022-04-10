@@ -38,8 +38,10 @@ $ yarn jest app.module.spec.ts
 
 ## TO DO
 
-1. Add integration tests with running database
-2. Add monitoring (`prom-client`, `Prometheus`, `Grafana`)
+1. Fix index on `transaction_calculation_history` table:
+   create Multicolumn index (`clientId`, `date`).
+2. Add integration tests with running database
+3. Add monitoring (`prom-client`, `Prometheus`, `Grafana`)
 
 ## Stay in touch
 
