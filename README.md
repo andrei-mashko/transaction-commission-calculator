@@ -42,6 +42,7 @@ $ yarn jest app.module.spec.ts
    create Multicolumn index (`clientId`, `date`).
 2. Add integration tests with running database
 3. Add monitoring (`prom-client`, `Prometheus`, `Grafana`)
+4. Add circuit breaker to the loading exchange rates
 
 ## Stay in touch
 
